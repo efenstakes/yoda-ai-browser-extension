@@ -14,7 +14,7 @@ const NoPrompts = () => {
               No Prompts Yet.
             </h2>
 
-            <p>
+            <p className='no_prompts_text'>
               Ask Yoda anything and get an immediate response now..
             </p>
 

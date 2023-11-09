@@ -13,8 +13,11 @@
     justify-content: center;
     align-items: center;
 
-  
-    background-color: teal;
+    background-image: linear-gradient(
+        84deg,
+        orange,
+        tomato
+    );
     backdrop-filter: blur(10px);
     opacity: .8;
     color: white;
@@ -48,8 +51,8 @@
     justify-content: center;
     align-items: center;
     
-    color: teal;
-    border: 2px solid teal;
+    color: orange;
+    border: 2px solid orange;
     border-radius: 50%;
 }
 
