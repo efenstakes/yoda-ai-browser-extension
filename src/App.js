@@ -13,41 +13,7 @@ import { getPrompt, } from "./services/prompt"
 // styles
 import './App.css';
 
-const testPrompts = [
 
-  {
-    prompt: "How are you?",
-    reply: "I dont know, I'm just an AI without feelings."
-  },
-  {
-    prompt: "Does that mean that there is an AI out there with feelings?",
-    reply: "I dont know that either, I would guess not from my data."
-  },
-  {
-    prompt: "How are you?",
-    reply: "I dont know, I'm just an AI without feelings."
-  },
-  {
-    prompt: "Does that mean that there is an AI out there with feelings?",
-    reply: "I dont know that either, I would guess not from my data."
-  },
-  {
-    prompt: "How are you?",
-    reply: "I dont know, I'm just an AI without feelings."
-  },
-  {
-    prompt: "Does that mean that there is an AI out there with feelings?",
-    reply: "I dont know that either, I would guess not from my data."
-  },
-  {
-    prompt: "How are you?",
-    reply: "I dont know, I'm just an AI without feelings."
-  },
-  {
-    prompt: "Does that mean that there is an AI out there with feelings?",
-    reply: "I dont know that either, I would guess not from my data."
-  },
-]
 function App() {
   const promptListRef = useRef()
   const [prompt, setPrompt] = useState('')
@@ -73,7 +39,7 @@ function App() {
     setPrompt('')
     setIsLoading(false)
 
-    promptListRef.current.scrollIntoView({ behavior: "smooth" });
+    if( promptListRef.current ) promptListRef.current.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -97,9 +63,11 @@ function App() {
 
       { !prompts.length && <NoPrompts /> }
 
-      {/* input */}
+      {/* prompt input */}
       <div className="row prompt_input">
-        <input
+
+        {/* input */}
+        <textarea
           type="text"
           className="prompt_input_input"
           placeholder="Ask Yoda..."
@@ -108,10 +76,13 @@ function App() {
             (e)=> setPrompt(e.target.value)
           }
         />
+
+        {/* submit button and progress */}
         <div className='prompt_input__icon' onClick={submitPrompt}>
           { !isLoading && <AiOutlineSend size={20} /> }
-          { isLoading && <CircularProgress size={20} /> }
+          { isLoading && <CircularProgress size={20} style={{ color: 'orange', }} /> }
         </div>
+
       </div>
     </div>
   );
