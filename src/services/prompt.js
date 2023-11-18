@@ -10,22 +10,18 @@ export const getPrompt = async ({ prompt })=> {
             serverURL,
             {
                 method: "POST",
-                'Content-Type': 'application/json',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({ prompt, })
             }
         )
     
         const response = await request.json()
-        console.log('====================================');
-        console.log("response ", response);
-        console.log('====================================');
-    
+
         return response
     } catch (error) {
         
-        console.log('====================================');
-        console.log("error ", error);
-        console.log('====================================');
         return null
     }
 }
