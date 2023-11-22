@@ -15,10 +15,10 @@
 .prompt_card__prompt {
     padding: .8rem .5rem;
     border-radius: 10px;
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 2px;
 
-    /* #d1dfe5; */
-    background-color: #ebd9b8;
+    /* #d1dfe5;  #ebd9b8; */
+    background-color: #dad7d5;
     width: 80%;
     min-height: 24px;
 
@@ -30,9 +30,10 @@
 .prompt_card__reply {
     padding: .8rem .5rem;
     border-radius: 10px;
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 2px;
 
-    background-color: #f3dcd8; /** #9ad7d7; rgb(18, 188, 188); **/
+    /**  #ecd9c5; #f3dcd8;  #9ad7d7; rgb(18, 188, 188); **/
+    background-color: #efe5da;
     width: 80%;
     min-height: 24px;
 
